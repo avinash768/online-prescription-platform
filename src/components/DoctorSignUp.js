@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const DoctorSignUp = () => {
     const navigate = useNavigate();
     const [profilePicture, setProfilePicture] = useState(null);
-    const [specialty, setSpecialty] = useState('');
 
     const handleFileChange = (event) => {
         setProfilePicture(URL.createObjectURL(event.target.files[0]));
@@ -14,8 +13,8 @@ const DoctorSignUp = () => {
         e.preventDefault();
         // Save form data to the server/database here
 
-        // After saving data, navigate to the doctor dashboard
-        navigate('/DoctorDashboard');
+        // After saving data, navigate to the doctor's dashboard
+        navigate('/doctor-dashboard');
     };
 
     return (
@@ -40,28 +39,7 @@ const DoctorSignUp = () => {
                         />
                     )}
                 </div>
-                <div className="mb-4">
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        required
-                    />
-                </div>
-                <div className="mb-4">
-                    <label htmlFor="specialty" className="block text-sm font-medium text-gray-700">Specialty</label>
-                    <input
-                        type="text"
-                        id="specialty"
-                        name="specialty"
-                        value={specialty}
-                        onChange={(e) => setSpecialty(e.target.value)}
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        required
-                    />
-                </div>
+                {/* Add other fields as needed */}
                 <button
                     type="submit"
                     className="w-full py-2 px-4 bg-green-500 text-white font-semibold rounded-md shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-transform transform hover:scale-105"

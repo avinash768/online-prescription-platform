@@ -51,11 +51,10 @@ const PaymentPage = () => {
   const [transactionId, setTransactionId] = useState('');
   const [consent, setConsent] = useState(false);
 
-  const handleSubmit = () => {
-    if (consent && transactionId) {
-      // Submit appointment logic here
-    }
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('Appointment submitted successfully!');
+};
 
   return (
     <PaymentContainer>

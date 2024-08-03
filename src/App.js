@@ -6,7 +6,9 @@ import PatientSignUp from './components/PatientSignUp';
 import AdminSignIn from './components/AdminSignIn';
 import PatientDashboard from './pages/PatientDashboard';
 import DoctorConsultation from './components/DoctorConsultation';
-
+import PrescriptionPage from './components/PrescriptionPage';
+import DoctorDashboard from './pages/DoctorDashboard';
+import PaymentPage from './components/PaymentPage';
 const App = () => {
   return (
     <Router>
@@ -17,6 +19,9 @@ const App = () => {
         <Route path="/admin" element={<AdminSignIn />} />
         <Route path="/dashboard" element={<PatientDashboard />} />
         <Route path="/consult/:doctorId" element={<DoctorConsultation />} />
+        <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
+        <Route path="/prescription" element={<PrescriptionPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
       </Routes>
     </Router>
   );

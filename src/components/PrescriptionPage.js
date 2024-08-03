@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const consultations = [
     { id: 1, patientName: 'Alice Smith', illness: 'Flu', date: '2024-08-01' },
@@ -7,6 +8,7 @@ const consultations = [
 ];
 
 const PrescriptionPage = () => {
+    const navigate = useNavigate();
     const [prescriptions, setPrescriptions] = useState({});
 
     const handlePrescriptionChange = (id, field, value) => {
@@ -22,6 +24,8 @@ const PrescriptionPage = () => {
     const handleSubmit = (id) => {
         // Save the prescription details to the server/database here
         console.log(`Prescription for consultation ${id}:`, prescriptions[id]);
+        // After saving, navigate to the doctor's dashboard
+        navigate('/doctor-dashboard');
     };
 
     return (
